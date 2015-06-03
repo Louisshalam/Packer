@@ -1,0 +1,20 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "AKIAID6VGDN6NC3D4A5A",
+    "secret_key": "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",
+    "region": "us-east-1",
+    "source_ami": "ami-9eaa1cf6",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "packer-example {{timestamp}}",
+    "tags": {
+    "OS_Version": "Ubuntu",
+    "Release": "Latest"
+    }
+  }]
+}
