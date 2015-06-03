@@ -5,8 +5,8 @@
   },
   "builders": [{
     "type": "amazon-ebs",
-    "access_key": "AKIAID6VGDN6NC3D4A5A",
-    "secret_key": "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",
+    "access_key": "",
+    "secret_key": "",
     "region": "us-east-1",
     "source_ami": "ami-9eaa1cf6",
     "instance_type": "t2.micro",
@@ -16,5 +16,14 @@
     "OS_Version": "Ubuntu",
     "Release": "Latest"
     }
-  }]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "sudo apt-get update",
+      "sudo apt-get install -y redis-server"
+    ]
+  }],
+  "post-processors": ["vagrant"]
 }
